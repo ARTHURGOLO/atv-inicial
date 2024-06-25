@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exibir/Ocultar Elemento</title>
+<style>
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .elemento {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Exibir/Ocultar Elemento</h2>
+  <button onclick="ocultarElemento()">Ocultar Elemento</button>
+  <button onclick="exibirElemento()">Exibir Elemento</button>
+  
+  <div class="elemento" id="elementoVisivel">
+    <p>Este é o elemento que será exibido ou ocultado.</p>
+  </div>
+</div>
+
+<script>
+  function ocultarElemento() {
+    document.getElementById('elementoVisivel').style.display = 'none';
+  }
+  
+  function exibirElemento() {
+    document.getElementById('elementoVisivel').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

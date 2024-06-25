@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Idade</title>
+<style>
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Calculadora de Idade</h2>
+  <label for="anoNascimento">Ano de Nascimento:</label>
+  <input type="number" id="anoNascimento" placeholder="Insira o ano" required>
+  <button onclick="calcularIdade()">Calcular Idade</button>
+  <p id="resultadoIdade"></p>
+</div>
+
+<script>
+  function calcularIdade() {
+   
+    let anoNascimento = document.getElementById('anoNascimento').value;
+
+    // Calcular a idade
+    let anoAtual = new Date().getFullYear();
+    let idade = anoAtual - anoNascimento;
+
+   
+    document.getElementById('resultadoIdade').textContent = `Sua idade é ${idade} anos.`;
+  }
+</script>
+
+</body>
+</html>

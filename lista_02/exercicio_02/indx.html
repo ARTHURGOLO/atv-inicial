@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Contato</title>
+<style>
+    .error {
+        color: red;
+        font-size: 0.8em;
+    }
+</style>
+</head>
+<body>
+
+<h2>Formulário de Contato</h2>
+
+<form id="formulario">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required>
+    <span id="erroNome" class="error"></span><br>
+
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email" required>
+    <span id="erroEmail" class="error"></span><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); // Previne o envio padrão do formulário
+
+    var nome = document.getElementById('nome').value.trim();
+    var email = document.getElementById('email').value.trim();
+
+    var erroNome = document.getElementById('erroNome');
+    var erroEmail = document.getElementById('erroEmail');
+    var temErro = false;
+
+    if (nome === '') {
+        erroNome.textContent = 'Preencha o nome.';
+        temErro = true;
+    } else {
+        erroNome.textContent = '';
+    }
+
+    if (email === '') {
+        erroEmail.textContent = 'Preencha o e-mail.';
+        temErro = true;
+    } else {
+        erroEmail.textContent = '';
+    }
+
+    if (!temErro) {
+        var dados = {
+            nome: nome,
+            email: email
+        };
+        console.log(JSON.stringify(dados));
+        this.reset();
+    }
+});
+</script>
+
+</body>
+</html>

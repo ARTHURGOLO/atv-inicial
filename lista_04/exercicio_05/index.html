@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Área de Quadrado</title>
+  <script>
+    function calcularArea() {
+      
+      var base = parseFloat(document.getElementById('base').value);
+      var altura = parseFloat(document.getElementById('altura').value);
+      
+     
+      if (isNaN(base) || isNaN(altura)) {
+        alert('Por favor, insira valores numéricos válidos para base e altura.');
+        return;
+      }
+      
+      
+      var area = base * altura;
+      
+      
+      document.getElementById('resultado').innerHTML = "A área do quadrado é " + area.toFixed(3);
+    }
+  </script>
+</head>
+<body>
+  <h2>Calculadora de Área de Quadrado</h2>
+  
+  <form>
+    <label for="base">Base do quadrado:</label>
+    <input type="number" id="base" name="base" required>
+    <br><br>
+    <label for="altura">Altura do quadrado:</label>
+    <input type="number" id="altura" name="altura" required>
+    <br><br>
+    <button type="button" onclick="calcularArea()">Calcular Área</button>
+  </form>
+  
+  <div id="resultado"></div>
+
+</body>
+</html>

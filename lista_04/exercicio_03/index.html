@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar se número é par ou ímpar</title>
+</head>
+<body>
+    <h2>Verificar se número é par ou ímpar</h2>
+
+    <label for="numero">Digite um número inteiro:</label>
+    <input type="number" id="numero">
+
+    <button onclick="verificarParOuImpar()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function ehPar(numero) {
+            if (numero % 2 === 0) {
+                return 1; 
+            } else {
+                return 0; 
+            }
+        }
+
+        function verificarParOuImpar() {
+            var inputNumero = document.getElementById("numero").value;
+            var numero = parseInt(inputNumero);
+
+            var resultado = ehPar(numero);
+
+            if (resultado === 1) {
+                document.getElementById("resultado").innerText = numero + " é par.";
+            } else {
+                document.getElementById("resultado").innerText = numero + " é ímpar.";
+            }
+        }
+    </script>
+</body>
+</html>

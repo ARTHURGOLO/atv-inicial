@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encontrar o Maior Valor</title>
+  <script>
+    function buscaMaiorValor() {
+     
+      var valor1 = parseInt(document.getElementById('valor1').value);
+      var valor2 = parseInt(document.getElementById('valor2').value);
+      var valor3 = parseInt(document.getElementById('valor3').value);
+
+      
+      var maiorValor = Math.max(valor1, valor2, valor3);
+
+      
+      document.getElementById('resultado').innerText = "O maior valor informado foi " + maiorValor;
+    }
+  </script>
+</head>
+<body>
+  <h2>Encontrar o Maior Valor</h2>
+  
+  <label for="valor1">Valor 1:</label>
+  <input type="number" id="valor1" name="valor1" required><br><br>
+  
+  <label for="valor2">Valor 2:</label>
+  <input type="number" id="valor2" name="valor2" required><br><br>
+  
+  <label for="valor3">Valor 3:</label>
+  <input type="number" id="valor3" name="valor3" required><br><br>
+  
+  <button onclick="buscaMaiorValor()">Encontrar Maior Valor</button><br><br>
+  
+  <div id="resultado"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora de Área de Retângulo</title>
+<script>
+    function areaRetangulo(base, altura) {
+      
+        var area = base * altura;
+
+       
+        return area;
+    }
+
+    function calcularArea() {
+        
+        var base = parseFloat(document.getElementById('base').value);
+        var altura = parseFloat(document.getElementById('altura').value);
+
+       
+        if (!isNaN(base) && !isNaN(altura)) {
+           
+            var areaCalculada = areaRetangulo(base, altura);
+
+            
+            var resultado = document.getElementById('resultado');
+            resultado.textContent = "A área do retângulo é " + areaCalculada.toFixed(3);
+        } else {
+            
+            alert("Por favor, insira valores numéricos válidos para base e altura.");
+        }
+    }
+</script>
+</head>
+<body>
+    <h2>Calculadora de Área de Retângulo</h2>
+    <label for="base">Base:</label>
+    <input type="number" id="base" name="base" step="any" required><br><br>
+    <label for="altura">Altura:</label>
+    <input type="number" id="altura" name="altura" step="any" required><br><br>
+    <button onclick="calcularArea()">Calcular Área</button><br><br>
+    <div id="resultado"></div>
+</body>
+</html>
